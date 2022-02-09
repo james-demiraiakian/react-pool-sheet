@@ -1,25 +1,23 @@
-# Alchemy React Base Template
+# Pool Sheet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### - Description
 
-Use this template for all your "from scratch" deliverables. To start, simply run
+This app is designed to create a digital pool sheet resource for different forms of fencing. It is a virtual version of the physical pool sheets created by the USFA, following their bout conventions.
 
-- `npm install`
-- `npm start`
+---
 
-## Available Scripts
+### - Features
 
-In the project directory, you can run:
+- Name Entry
+- Stats
+  - Victory tracking - V
+  - Touches Scored - TS
+  - Touches Recieved - TR
+  - Indicator (TS - TR)
+  - Placement - PL
+- Calculations to determine Stats Automatic
 
-### `npm start`
+### Attributations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- James Demiraiakian - Lead Engineer/Dev
+- Nick Richardson - Testing
