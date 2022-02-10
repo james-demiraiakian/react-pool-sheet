@@ -3,6 +3,7 @@ import { usePart } from '../context/PartContext';
 import { useList } from '../context/PartListContext';
 import { v4 as uuid } from 'uuid';
 import Match from './Match';
+import './ParticipantList.css';
 
 export default function ParticipantList() {
   const [partName, setPartName] = useState('');
@@ -53,7 +54,7 @@ export default function ParticipantList() {
   };
 
   return (
-    <div>
+    <div className="participant-list">
       {!start ? (
         <>
           <h1>Pool Sheet</h1>

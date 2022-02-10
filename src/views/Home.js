@@ -1,10 +1,11 @@
 import React from 'react';
 import ParticipantList from '../components/ParticipantList';
 import { PartListProvider } from '../context/PartListContext';
+import './Home.css';
 
 export default function Home() {
   return (
-    <div>
+    <div className="home">
       <PartListProvider>
         <ParticipantList />
       </PartListProvider>
