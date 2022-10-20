@@ -1,5 +1,5 @@
 import React from 'react';
-import ParticipantList from '../components/ParticipantList';
+import ParticipantList from '../components/ParticipantList/ParticipantList';
 import { PartListProvider } from '../context/PartListContext';
 import './Home.css';
 
