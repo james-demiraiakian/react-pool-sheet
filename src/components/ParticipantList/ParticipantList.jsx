@@ -53,6 +53,18 @@ export default function ParticipantList() {
     setList([]);
   };
 
+  const handleDelete = (e) => {
+    console.log(e.target.value);
+    const currentList = list;
+    const newList = [];
+    currentList.filter((per) => {
+      if (per.id !== e.target.value) {
+        newList.push(per);
+      }
+    });
+    setList(newList);
+  };
+
   return (
     <div className="participant-list">
       {!start ? (
@@ -68,12 +80,17 @@ export default function ParticipantList() {
               <button type="submit">Add</button>
             </div>
           </form>
-          <form onSubmit={handleSubmit}>
+          <div>
             {list.map((person) => (
-              <div key={person.id}>{person.name}</div>
+              <div key={person.id}>
+                <div>{person.name}</div>
+                <button onClick={handleDelete} value={person.id}>
+                  X
+                </button>
+              </div>
             ))}
-            <button type="submit">Accept</button>
-          </form>
+            <button onClick={(e) => handleSubmit(e)}>Accept</button>
+          </div>
         </>
       ) : (
         <Match />
