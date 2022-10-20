@@ -54,7 +54,6 @@ export default function ParticipantList() {
   };
 
   const handleDelete = (e) => {
-    console.log(e.target.value);
     const currentList = list;
     const newList = [];
     currentList.filter((per) => {
