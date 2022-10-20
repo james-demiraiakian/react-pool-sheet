@@ -17,7 +17,14 @@ This app is designed to create a digital pool sheet resource for different forms
   - Placement - PL
 - Calculations to determine Stats Automatic
 
-### Attributations
+### Attributions
 
 - James Demiraiakian - Lead Engineer/Dev
 - Nick Richardson - Testing
+
+### To Do
+
+- Set Up Match Scoring component
+- Make the Bout list entries selectable, and enter participant data into a state variable
+- Save scoring automatically when switching between bouts (hotseat)
+- Move all state into context
