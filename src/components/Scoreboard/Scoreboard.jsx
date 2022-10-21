@@ -7,27 +7,48 @@ export default function Scoreboard() {
   const { list, setList } = useList();
   const { bout, setBout, partOne, setPartOne, partTwo, setPartTwo } = usePart();
 
-  // Set bout will be removed from here, and will be set from numbered components, on click.
+  // Set up function to grab participant objects from list based on id returned from numbered component
   useEffect(() => {
-    setBout([list[0], list[1]]);
     setPartOne(bout[0]);
     setPartTwo(bout[1]);
-  }, [list]);
+    console.log(bout);
+    console.log(list);
+    console.log(partOne);
+    console.log(partTwo);
+  }, [bout, list, partOne, partTwo, setPartOne, setPartTwo]);
 
-  const { name: nameOne, touchesScored: touchesOne } = partOne;
-  const { name: nameTwo, touchesScored: touchesTwo } = partTwo;
+  const handleAdd = (e) => {
+    e.preventDefault();
+    console.log(`Add point to ${e.target.value}`);
+  };
+
+  const handleSubtract = (e) => {
+    e.preventDefault();
+    console.log(`Subtract point from ${e.target.value}`);
+  };
+
+  // const { name: nameOne, touchesScored: touchesOne, id: idOne } = partOne;
+  // const { name: nameTwo, touchesScored: touchesTwo, id: idTwo } = partTwo;
 
   return (
     <div>
       <p>Scoreboard</p>
-      <div className="left">
+      {/* <div className="left">
         <p>Name: {nameOne}</p>
         <p>Touches: {touchesOne}</p>
+        <button onClick={handleSubtract} value={idOne}>
+          -
+        </button>
+        <button onClick={handleAdd} value={idOne}>
+          +
+        </button>
       </div>
       <div className="right">
         <p>Name: {nameTwo}</p>
         <p>Touches: {touchesTwo}</p>
-      </div>
+        <button>-</button>
+        <button>+</button>
+      </div> */}
     </div>
   );
 }
