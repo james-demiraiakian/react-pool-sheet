@@ -9,6 +9,7 @@ import Nine from '../number/Nine';
 import Ten from '../number/Ten';
 import Eleven from '../number/Eleven';
 import Twelve from '../number/Twelve';
+import Scoreboard from '../Scoreboard/Scoreboard';
 
 export default function Match() {
   const { list } = useList();
@@ -45,5 +46,10 @@ export default function Match() {
     default:
       break;
   }
-  return <div>{number}</div>;
+  return (
+    <div>
+      {number}
+      <Scoreboard />
+    </div>
+  );
 }
