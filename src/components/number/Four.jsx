@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { usePart } from '../../context/PartContext';
 import { useList } from '../../context/PartListContext';
 

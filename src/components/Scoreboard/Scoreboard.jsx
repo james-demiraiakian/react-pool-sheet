@@ -11,8 +11,6 @@ export default function Scoreboard() {
   useEffect(() => {
     setPartOne(bout[0]);
     setPartTwo(bout[1]);
-    console.log(bout);
-    console.log(list);
     console.log(partOne);
     console.log(partTwo);
   }, [bout, list, partOne, partTwo, setPartOne, setPartTwo]);

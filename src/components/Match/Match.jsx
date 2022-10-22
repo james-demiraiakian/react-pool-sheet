@@ -10,6 +10,8 @@ import Ten from '../number/Ten';
 import Eleven from '../number/Eleven';
 import Twelve from '../number/Twelve';
 import Scoreboard from '../Scoreboard/Scoreboard';
+import BoutLoop from '../BoutLoop/BoutLoop';
+import { four } from '../number/fourtest';
 
 export default function Match() {
   const { list } = useList();
@@ -17,7 +19,8 @@ export default function Match() {
   let number;
   switch (length) {
     case 4:
-      number = <Four />;
+      number = <BoutLoop arr={four} />;
+      // number = <Four />;
       break;
     case 5:
       number = <Five />;
