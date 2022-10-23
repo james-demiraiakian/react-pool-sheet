@@ -28,20 +28,12 @@ export default function Scoreboard() {
     if (e.target.value === partOne.id) {
       setPartOne({
         ...partOne,
-        touchesScored: partOne.touchesScored + 1,
-      });
-      setPartTwo({
-        ...partTwo,
-        touchesReceived: partTwo.touchesReceived + 1,
+        touchesCurrent: partOne.touchesCurrent + 1,
       });
     } else {
-      setPartOne({
-        ...partOne,
-        touchesReceived: partOne.touchesReceived + 1,
-      });
       setPartTwo({
         ...partTwo,
-        touchesScored: partTwo.touchesScored + 1,
+        touchesCurrent: partTwo.touchesCurrent + 1,
       });
     }
   };
@@ -50,20 +42,12 @@ export default function Scoreboard() {
     if (e.target.value === partOne.id) {
       setPartOne({
         ...partOne,
-        touchesScored: partOne.touchesScored - 1,
-      });
-      setPartTwo({
-        ...partTwo,
-        touchesReceived: partTwo.touchesReceived - 1,
+        touchesCurrent: partOne.touchesCurrent - 1,
       });
     } else {
-      setPartOne({
-        ...partOne,
-        touchesReceived: partOne.touchesReceived - 1,
-      });
       setPartTwo({
         ...partTwo,
-        touchesScored: partTwo.touchesScored - 1,
+        touchesCurrent: partTwo.touchesCurrent - 1,
       });
     }
   };
@@ -71,12 +55,14 @@ export default function Scoreboard() {
   // The following will be calculated at the end of a bout, in a handleFinish function
 
   const handleFinish = () => {
-    setPartOne({ ...partOne, indicator: partOne.touchesScored - partOne.touchesReceived });
-    setPartTwo({ ...partTwo, indicator: partTwo.touchesScored - partTwo.touchesReceived });
+    const indicatorOne = partOne.indicator + partOne.touchesCurrent - partTwo.touchesCurrent;
+    const indicatorTwo = partTwo.indicator + partTwo.touchesCurrent - partOne.touchesCurrent;
+    const receivedOne = partOne.indicator + partTwo.touchesCurrent;
+    const receivedTwo = partTwo.indicator + partOne.touchesCurrent;
   };
 
-  const { name: nameOne, touchesScored: touchesOne, id: idOne } = partOne;
-  const { name: nameTwo, touchesScored: touchesTwo, id: idTwo } = partTwo;
+  const { name: nameOne, touchesCurrent: touchesOne, id: idOne } = partOne;
+  const { name: nameTwo, touchesCurrent: touchesTwo, id: idTwo } = partTwo;
 
   return (
     <div>

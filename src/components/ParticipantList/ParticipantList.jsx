@@ -21,6 +21,7 @@ export default function ParticipantList() {
         victories: 0,
         touchesScored: 0,
         touchesReceived: 0,
+        touchesCurrent: 0,
         indicator: 0,
         placement: 0,
         id: uuid(),
