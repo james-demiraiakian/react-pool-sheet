@@ -6,7 +6,6 @@ export default function BoutLoop(array) {
   const { list } = useList();
   const { setBout } = usePart();
   const { arr } = array;
-  console.log(arr);
 
   return (
     <div>

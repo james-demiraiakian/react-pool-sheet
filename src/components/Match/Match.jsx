@@ -12,9 +12,11 @@ import Twelve from '../number/Twelve';
 import Scoreboard from '../Scoreboard/Scoreboard';
 import BoutLoop from '../BoutLoop/BoutLoop';
 import { four } from '../number/fourtest';
+import { usePart } from '../../context/PartContext';
 
 export default function Match() {
   const { list } = useList();
+  const { bout } = usePart();
   const length = list.length;
   let number;
   switch (length) {
@@ -52,7 +54,7 @@ export default function Match() {
   return (
     <div>
       {number}
-      <Scoreboard />
+      {bout[0] && <Scoreboard />}
     </div>
   );
 }

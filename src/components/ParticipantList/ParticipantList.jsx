@@ -7,7 +7,7 @@ import './ParticipantList.css';
 
 export default function ParticipantList() {
   const [partName, setPartName] = useState('');
-  const { setPart, setPartOne, setPartTwo } = usePart();
+  const { setPart, setPartOne, setPartTwo, setBout } = usePart();
   const { list, setList } = useList();
   const [start, setStart] = useState(false);
 
@@ -51,6 +51,9 @@ export default function ParticipantList() {
     setStart(false);
     setPart('');
     setList([]);
+    setBout([]);
+    setPartOne({});
+    setPartTwo({});
   };
 
   const handleDelete = (e) => {
