@@ -1,6 +1,5 @@
 import React from 'react';
 import { useList } from '../../context/PartListContext';
-import Four from '../number/Four';
 import Five from '../number/Five';
 import Six from '../number/Six';
 import Seven from '../number/Seven';
@@ -22,7 +21,6 @@ export default function Match() {
   switch (length) {
     case 4:
       number = <BoutLoop arr={four} />;
-      // number = <Four />;
       break;
     case 5:
       number = <Five />;

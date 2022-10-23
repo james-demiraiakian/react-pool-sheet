@@ -20,8 +20,9 @@ export default function Scoreboard() {
       });
     };
     fetchFencers();
-    // setPartOne(bout[0]);
   }, [bout, list, setPartOne, setPartTwo]);
+
+  // Realized I need to add a key to the fencers to account for current bout touches vs total tournament touches
 
   const handleAdd = (e) => {
     if (e.target.value === partOne.id) {
@@ -69,8 +70,10 @@ export default function Scoreboard() {
 
   // The following will be calculated at the end of a bout, in a handleFinish function
 
-  // setPartOne({ ...partOne, indicator: partOne.touchesScored - partOne.touchesReceived });
-  // setPartTwo({ ...partTwo, indicator: partTwo.touchesScored - partTwo.touchesReceived });
+  const handleFinish = () => {
+    setPartOne({ ...partOne, indicator: partOne.touchesScored - partOne.touchesReceived });
+    setPartTwo({ ...partTwo, indicator: partTwo.touchesScored - partTwo.touchesReceived });
+  };
 
   const { name: nameOne, touchesScored: touchesOne, id: idOne } = partOne;
   const { name: nameTwo, touchesScored: touchesTwo, id: idTwo } = partTwo;
@@ -98,6 +101,7 @@ export default function Scoreboard() {
           +
         </button>
       </div>
+      <button onClick={handleFinish}>Finish Bout</button>
     </div>
   );
 }
