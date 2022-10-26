@@ -7,6 +7,7 @@ export default function BoutLoop(array) {
   const { setBout, partOne, partTwo } = usePart();
   const { arr } = array;
 
+  // flawed
   const handleClick = (num) => {
     if (!partOne.name || !partTwo.name) {
       setBout([list[num[0]].id, list[num[1]].id]);
