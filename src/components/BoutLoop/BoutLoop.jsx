@@ -7,17 +7,21 @@ export default function BoutLoop(array) {
   const { setBout, partOne, partTwo } = usePart();
   const { arr } = array;
 
-  // flawed
+  // Flawed. Will need to refactor the hotseat switching, and state values.
+  // Consider having the current [bout, setBout] state become [activeBout, setActiveBout].
+  // Then have a [bouts, setBouts] state that is instantiated with all the possible bout combinations.
+  // When a bout is selected, it's pulled from bouts, and put into setActiveBout.
+  // bouts and activeBouts can track current touches, and can be used to hotseat switch between bouts without mixing scores.
   const handleClick = (num) => {
     if (!partOne.name || !partTwo.name) {
       setBout([list[num[0]].id, list[num[1]].id]);
-    } else if (list[num[0]].touchesCurrent !== 0) {
+    } else if (partOne.touchesCurrent !== 0) {
       alert(
-        `${list[num[0]].name} is already in a bout. Fencers cannot be in more than one active bout.`
+        `${partOne.name} is already in a bout. Fencers cannot be in more than one active bout.`
       );
-    } else if (list[num[1]].touchesCurrent !== 0) {
+    } else if (partTwo.touchesCurrent !== 0) {
       alert(
-        `${list[num[1]].name} is already in a bout. Fencers cannot be in more than one active bout.`
+        `${partTwo.name} is already in a bout. Fencers cannot be in more than one active bout.`
       );
     } else {
       setBout([list[num[0]].id, list[num[1]].id]);
