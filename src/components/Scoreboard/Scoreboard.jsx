@@ -4,7 +4,7 @@ import { useList } from '../../context/PartListContext';
 
 // Remove setBout from context hook after connect to the numbered components
 export default function Scoreboard() {
-  const { list } = useList();
+  const { list, setList } = useList();
   const { bout, partOne, setPartOne, partTwo, setPartTwo } = usePart();
 
   // Set up function to grab participant objects from list based on id returned from numbered component
@@ -52,14 +52,45 @@ export default function Scoreboard() {
     }
   };
 
-  // The following will be calculated at the end of a bout, in a handleFinish function
-
   const handleFinish = () => {
     const indicatorOne = partOne.indicator + partOne.touchesCurrent - partTwo.touchesCurrent;
     const indicatorTwo = partTwo.indicator + partTwo.touchesCurrent - partOne.touchesCurrent;
-    const receivedOne = partOne.indicator + partTwo.touchesCurrent;
-    const receivedTwo = partTwo.indicator + partOne.touchesCurrent;
+    const scoredOne = partOne.touchesScored + partOne.touchesCurrent;
+    const scoredTwo = partTwo.touchesScored + partTwo.touchesCurrent;
+    const receivedOne = partOne.touchesReceived + partTwo.touchesCurrent;
+    const receivedTwo = partTwo.touchesReceived + partOne.touchesCurrent;
+
+    setPartOne({
+      ...partOne,
+      indicator: indicatorOne,
+      touchesScored: scoredOne,
+      touchesReceived: receivedOne,
+      touchesCurrent: 0,
+    });
+    setPartTwo({
+      ...partTwo,
+      indicator: indicatorTwo,
+      touchesScored: scoredTwo,
+      touchesReceived: receivedTwo,
+      touchesCurrent: 0,
+    });
   };
+
+  useEffect(() => {
+    const newList = [];
+    list.map((l) => {
+      console.log(l);
+      if (l.id === partOne.id) {
+        l = partOne;
+      }
+      if (l.id === partTwo.id) {
+        l = partTwo;
+      }
+      newList.push(l);
+    });
+    console.log(newList);
+    setList(newList);
+  }, [partOne, partTwo]);
 
   const { name: nameOne, touchesCurrent: touchesOne, id: idOne } = partOne;
   const { name: nameTwo, touchesCurrent: touchesTwo, id: idTwo } = partTwo;
