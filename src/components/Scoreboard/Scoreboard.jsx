@@ -79,7 +79,7 @@ export default function Scoreboard() {
   useEffect(() => {
     const newList = [];
     list.map((l) => {
-      console.log(l);
+      // console.log(l);
       if (l.id === partOne.id) {
         l = partOne;
       }
@@ -88,7 +88,7 @@ export default function Scoreboard() {
       }
       newList.push(l);
     });
-    console.log(newList);
+    // console.log(newList);
     setList(newList);
   }, [partOne, partTwo]);
 
