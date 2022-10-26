@@ -11,7 +11,7 @@ export default function BoutLoop(array) {
   // Consider having the current [bout, setBout] state become [activeBout, setActiveBout].
   // Then have a [bouts, setBouts] state that is instantiated with all the possible bout combinations.
   // When a bout is selected, it's pulled from bouts, and put into setActiveBout.
-  // bouts and activeBouts can track current touches, and can be used to hotseat switch between bouts without mixing scores.
+  // bouts and activeBouts can track current touches, and can be used to hotseat switch between bouts without mixing scores...
   const handleClick = (num) => {
     if (!partOne.name || !partTwo.name) {
       setBout([list[num[0]].id, list[num[1]].id]);
