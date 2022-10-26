@@ -11,13 +11,13 @@ export default function BoutLoop(array) {
   const handleClick = (num) => {
     if (!partOne.name || !partTwo.name) {
       setBout([list[num[0]].id, list[num[1]].id]);
-    } else if (partOne.touchesCurrent !== 0) {
+    } else if (list[num[0]].touchesCurrent !== 0) {
       alert(
-        `${partOne.name} is already in a bout. Fencers cannot be in more than one active bout.`
+        `${list[num[0]].name} is already in a bout. Fencers cannot be in more than one active bout.`
       );
-    } else if (partTwo.touchesCurrent !== 0) {
+    } else if (list[num[1]].touchesCurrent !== 0) {
       alert(
-        `${partTwo.name} is already in a bout. Fencers cannot be in more than one active bout.`
+        `${list[num[1]].name} is already in a bout. Fencers cannot be in more than one active bout.`
       );
     } else {
       setBout([list[num[0]].id, list[num[1]].id]);
