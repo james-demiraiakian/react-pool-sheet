@@ -1,6 +1,5 @@
 import React from 'react';
 import { useList } from '../../context/PartListContext';
-import Four from '../number/Four';
 import Five from '../number/Five';
 import Six from '../number/Six';
 import Seven from '../number/Seven';
@@ -9,14 +8,19 @@ import Nine from '../number/Nine';
 import Ten from '../number/Ten';
 import Eleven from '../number/Eleven';
 import Twelve from '../number/Twelve';
+import Scoreboard from '../Scoreboard/Scoreboard';
+import BoutLoop from '../BoutLoop/BoutLoop';
+import { four } from '../number/fourtest';
+import { usePart } from '../../context/PartContext';
 
 export default function Match() {
   const { list } = useList();
+  const { bout } = usePart();
   const length = list.length;
   let number;
   switch (length) {
     case 4:
-      number = <Four />;
+      number = <BoutLoop arr={four} />;
       break;
     case 5:
       number = <Five />;
@@ -45,5 +49,10 @@ export default function Match() {
     default:
       break;
   }
-  return <div>{number}</div>;
+  return (
+    <div>
+      {number}
+      {bout[0] && <Scoreboard />}
+    </div>
+  );
 }

@@ -7,7 +7,7 @@ import './ParticipantList.css';
 
 export default function ParticipantList() {
   const [partName, setPartName] = useState('');
-  const { setPart } = usePart();
+  const { setPart, setPartOne, setPartTwo, setBout } = usePart();
   const { list, setList } = useList();
   const [start, setStart] = useState(false);
 
@@ -21,6 +21,7 @@ export default function ParticipantList() {
         victories: 0,
         touchesScored: 0,
         touchesReceived: 0,
+        touchesCurrent: 0,
         indicator: 0,
         placement: 0,
         id: uuid(),
@@ -51,6 +52,9 @@ export default function ParticipantList() {
     setStart(false);
     setPart('');
     setList([]);
+    setBout([]);
+    setPartOne({});
+    setPartTwo({});
   };
 
   const handleDelete = (e) => {
