@@ -90,7 +90,8 @@ export default function Scoreboard() {
     });
     // console.log(newList);
     setList(newList);
-  }, [partOne, partTwo]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [partOne, partTwo, setList]);
 
   const { name: nameOne, touchesCurrent: touchesOne, id: idOne } = partOne;
   const { name: nameTwo, touchesCurrent: touchesTwo, id: idTwo } = partTwo;
