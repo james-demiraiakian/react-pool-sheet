@@ -6,7 +6,20 @@ const PartProvider = ({ children }) => {
   const [part, setPart] = useState('');
   const [partOne, setPartOne] = useState({});
   const [partTwo, setPartTwo] = useState({});
-  const partValue = { part, setPart, partOne, setPartOne, partTwo, setPartTwo };
+  const [bouts, setBouts] = useState([]);
+  const [activeBout, setActiveBout] = useState([]);
+  const partValue = {
+    part,
+    setPart,
+    partOne,
+    setPartOne,
+    partTwo,
+    setPartTwo,
+    bouts,
+    setBouts,
+    activeBout,
+    setActiveBout,
+  };
 
   return <PartContext.Provider value={partValue}>{children}</PartContext.Provider>;
 };

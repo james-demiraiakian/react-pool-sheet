@@ -5,22 +5,23 @@ import { useList } from '../../context/PartListContext';
 // Remove setBout from context hook after connect to the numbered components
 export default function Scoreboard() {
   const { list, setList } = useList();
-  const { bout, partOne, setPartOne, partTwo, setPartTwo } = usePart();
+  const { activeBout, partOne, setPartOne, partTwo, setPartTwo } = usePart();
 
   // Set up function to grab participant objects from list based on id returned from numbered component
   useEffect(() => {
     const fetchFencers = () => {
       list.map((l) => {
-        if (l.id === bout[0]) {
+        if (l.id === activeBout[0]) {
           setPartOne(l);
         }
-        if (l.id === bout[1]) {
+        if (l.id === activeBout[1]) {
           setPartTwo(l);
         }
       });
     };
+    console.log('Active Bout in Scoreboard', activeBout);
     fetchFencers();
-  }, [bout, list, setPartOne, setPartTwo]);
+  }, [activeBout, list, setPartOne, setPartTwo]);
 
   // Realized I need to add a key to the fencers to account for current bout touches vs total tournament touches
 
