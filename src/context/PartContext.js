@@ -4,10 +4,22 @@ export const PartContext = createContext();
 
 const PartProvider = ({ children }) => {
   const [part, setPart] = useState('');
-  const [bout, setBout] = useState([]);
   const [partOne, setPartOne] = useState({});
   const [partTwo, setPartTwo] = useState({});
-  const partValue = { part, setPart, bout, setBout, partOne, setPartOne, partTwo, setPartTwo };
+  const [bouts, setBouts] = useState([]);
+  const [activeBout, setActiveBout] = useState([]);
+  const partValue = {
+    part,
+    setPart,
+    partOne,
+    setPartOne,
+    partTwo,
+    setPartTwo,
+    bouts,
+    setBouts,
+    activeBout,
+    setActiveBout,
+  };
 
   return <PartContext.Provider value={partValue}>{children}</PartContext.Provider>;
 };
