@@ -3,7 +3,7 @@ import './App.css';
 import Home from './views/Home/Home';
 import LandingPage from './views/LandingPage/LandingPage';
 import CreateTournament from './components/Tournament/Create/CreateTournament';
-import ListTournament from './components/Tournament/List/ListTournament';
+import TournamentList from './components/Tournament/List/TournamentList';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/createTournament" element={<CreateTournament />} />
-        <Route path="/listTournament" element={<ListTournament />} />
+        <Route path="/tournamentList" element={<TournamentList />} />
       </Routes>
     </div>
   );

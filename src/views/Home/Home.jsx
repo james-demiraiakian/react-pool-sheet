@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="home">
       Select a thing to do
-      <Link to={'/listTournament'}>Tournament List</Link>
+      <Link to={'/tournamentList'}>Tournament List</Link>
     </div>
   );
 }
