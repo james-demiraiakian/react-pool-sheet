@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './context/UserContext';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { FencingProvider } from './context/FencingContext';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
     <Router>
       <UserProvider>
-        <App />
+        <FencingProvider>
+          <App />
+        </FencingProvider>
       </UserProvider>
     </Router>
   </StrictMode>

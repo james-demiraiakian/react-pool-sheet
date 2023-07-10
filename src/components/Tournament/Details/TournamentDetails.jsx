@@ -15,8 +15,6 @@ export default function TournamentDetails(tournament) {
       setBouts(resp2);
     };
     fetchData();
-
-    console.log(bouts);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

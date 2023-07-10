@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { getCurrentUser } from '../services/users';
 // import { useNavigate } from 'react-router-dom';
 
 export const UserContext = createContext();
@@ -7,6 +8,10 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
   // const [loading, setLoading] = useState(true);
   // const navigate = useNavigate();
+
+  useEffect(() => {
+    getCurrentUser().then(setUser);
+  }, []);
 
   const userValue = { user, setUser };
 

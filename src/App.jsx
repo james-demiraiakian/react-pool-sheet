@@ -4,6 +4,7 @@ import Home from './views/Home/Home';
 import LandingPage from './views/LandingPage/LandingPage';
 import CreateTournament from './components/Tournament/Create/CreateTournament';
 import TournamentList from './components/Tournament/List/TournamentList';
+import BoutList from './components/Bouts/BoutList/BoutList';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/createTournament" element={<CreateTournament />} />
         <Route path="/tournamentList" element={<TournamentList />} />
+        <Route path="/boutList" element={<BoutList />} />
       </Routes>
     </div>
   );

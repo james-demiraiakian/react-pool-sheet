@@ -21,6 +21,7 @@ This app is designed to create a digital pool sheet resource for different forms
 
 - James Demiraiakian - Lead Engineer/Dev
 - Nick Richardson - Testing
+- Chris Ling - Bout customSort Algorithm
 
 ### To Do
 
